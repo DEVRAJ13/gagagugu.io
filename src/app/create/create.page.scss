@@ -1,0 +1,118 @@
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+ 
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+:host ::ng-deep .swiper-button-prev-unique {
+    left: 0;
+    top: 50%;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  :host ::ng-deep .swiper-button-next-unique {
+    right: 0;
+    top: 50%;
+    position: absolute;
+    cursor: pointer;
+  }
+  
+
+  .container {
+    position: relative;
+}
+.slider_image{
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+
+.quotes-text{
+  // font: 1rem / 1.5 Georgia, serif;
+  font: 0.9rem / 1.7 Georgia, serif;
+}
+
+blockquote {
+  border:none;
+  font-family:Georgia, "Times New Roman", Times, serif;
+  // margin-bottom:-30px;
+  quotes: "\201C""\201D""\2018""\2019";
+  margin: 0;
+}
+
+blockquote p {
+// font-size:21px;
+}
+
+blockquote p:before { 
+content: open-quote;
+font-weight: bold;
+font-size:28px;
+color:#000000;
+} 
+blockquote p:after { 
+content: close-quote;
+font-weight: bold;
+font-size:28px;
+color:#000000;
+
+}
+
+
+.signature{
+  height: 23px;
+  width: 23px;
+}
+
+
+::ng-deep.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: var(--swiper-pagination-bullet-vertical-gap, 6px) 0;
+  display: block;
+  margin-top: 5px;
+  background-color: #b0b0b0;
+  height: 20px;
+  width: 5px;
+  border-radius: 20%;
+}
+
+.back_btn_outer {
+  position: fixed;
+  top: 16px;
+  right: 0px;
+  margin-right: 16px;
+}
+
+.back_btn_icon {
+  padding-top: 3px;
+}
+
+.back_btn {
+  background: #0000004a;
+  color: #ffffff;
+  height: 32px;
+  width: 32px;
+  outline: none;
+  box-shadow: none;
+  font-size: 25px;
+  border-radius: 100%;
+}
+
+.box{
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55%;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,87 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"> -->
+<!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-button expand="full" (click)="logout()">Logout</ion-button>
+  <app-explore-container name="Tab 1 page"></app-explore-container> -->
+<!-- <ion-button expand="full" (click)="logout()">Logout</ion-button>
+  <ion-button (click)="showBanner()">Show Banner</ion-button>
+  <ion-button (click)="hideBanner()">Hide Banner</ion-button>
+  <ion-button (click)="showInterstitial()">Show Interstitial</ion-button>
+  <ion-button (click)="showRewardVideo()">Show Reward Video</ion-button>
+  <ion-button (click)="createListing()">Create a new listing</ion-button> -->
+
+
+<!-- 
+</ion-content> -->
+
+
+
+<ion-header #header >
+  <ion-toolbar>
+    <ion-title class="inner-logo">
+
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button> 
+        <ion-avatar>
+          <img style="    height: 32px;
+          width: 32px;
+          margin-top: 16px;" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>  
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <div class="content" *ngIf="emptymsg === true">Nothing here. Please add your recipe and share with people.</div> -->
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding" size="6">
+        <ion-card style="    border-radius: 10px;
+        padding: 10px;" (click)="openModal()">
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <img style="width: 140px;
+              height: 140px;
+              border-radius: 10px;
+              object-fit: cover;
+              margin-top: 10px;
+              margin-bottom: 10px;" src="./assets/1.png" onError="this.src='./assets/images/profile_placeholder.png';">
+            </ion-col>
+          </ion-row>
+
+          <ion-row style="padding-top: 10px;
+          padding-bottom: 10px;">
+            <ion-col>
+              <h3 style="   font-size: 20px;
+              color: black;
+              font-weight: bold;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;">Flash cards for story</h3>
+            </ion-col>
+          </ion-row>
+
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

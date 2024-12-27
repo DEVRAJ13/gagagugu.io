@@ -1,0 +1,7 @@
+{
+  "name": "myApp2025",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

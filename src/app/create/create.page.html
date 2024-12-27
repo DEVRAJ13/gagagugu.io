@@ -1,0 +1,102 @@
+<ion-header [translucent]="true" class="ion-no-border" *navbar>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancelSearch()">
+      <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button>
+        <img class="signature" src="./assets/anchor.png">
+    </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <swiper-container #swiper direction="vertical" (afterinit)="swiperReady()" (swiper)="onSwiper($event)"
+    (afterinit)="swiperReady()" (slidechange)="swiperSlideChanged($event)" [loop]="false" [pagination]="true">
+    @for (item of collection; track item.name) {
+    @if (item.card_type === 'COVER') {
+    <swiper-slide>
+      <ion-content [style.--background]="item.bgColor">
+        <ion-buttons class="back_btn_outer">
+          <button class="back_btn" (click)="cancelSearch()">
+            <ion-icon class="back_btn_icon" name="close-outline"></ion-icon>
+          </button>
+        </ion-buttons>
+        <app-explore-container name="{{item.name}}"></app-explore-container>
+      </ion-content>
+    </swiper-slide>
+    } @else if (item.card_type === 'STORY_BOARD') {
+    <swiper-slide>
+      <ion-content >
+        <ion-buttons class="back_btn_outer">
+          <button class="back_btn" (click)="cancelSearch()">
+            <ion-icon class="back_btn_icon" name="close-outline"></ion-icon>
+          </button>
+        </ion-buttons>
+        <div style="margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 16px;">
+        <div class="container">
+            <img class="slider_image" [src]="item.img_url"/>
+        </div>
+        <div >
+          <p class="quotes-text">{{item.description}}</p>
+            <div style="    background-color: aliceblue;
+            width: 100%;
+            border-radius: 16px;
+            text-align: center;">
+              <blockquote><p class="quotes-text"><i>{{item.note}}</i></p></blockquote>
+          </div>
+        </div>
+      </div>
+      </ion-content>
+    </swiper-slide>
+  } @else {
+    <swiper-slide>
+      <ion-content>
+        Slide 3
+      </ion-content>
+    </swiper-slide>
+  }
+  } @empty {
+    <!-- <li>There are no items.</li> -->
+
+    <swiper-slide>
+      <ion-content >
+        <ion-buttons class="back_btn_outer">
+          <button class="back_btn" (click)="cancelSearch()">
+            <ion-icon class="back_btn_icon" name="close-outline"></ion-icon>
+          </button>
+        </ion-buttons>
+        <div style="margin-left: 28px;">
+          <h1 style="    font: 7.0rem / 1.9 Georgia, serif;">Aa</h1>
+        </div>
+        <div class="box">
+          <img style="    height: 400px;
+    width: 400px;" src="https://t4.ftcdn.net/jpg/07/49/34/67/360_F_749346792_gf4GadduYnng0kHsNUKed0X4Y6eeCo8Q.jpg">
+          <div>
+            <h1 style="font: 7.0rem / 1.9 Georgia, serif;">Apple</h1>
+          </div>
+        </div>
+      </ion-content>
+    </swiper-slide>
+    }
+  </swiper-container>
+
+
+
+
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goPrev()"> Start </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goNext()"> End </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->
